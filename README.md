@@ -41,6 +41,12 @@ or your .bash_history or .zsh_history, a possible trick is to do something like 
 export KOPYLOT_AUTH_TOKEN=$(cat ../../../keys/openai)
 ```
 
+If you want to make use of custom engine, please export engine using below command
+
+```bash
+export KOPYLOT_ENGINE=your_engine
+```
+
 3. Install KoPylot using pip:
 ```
 pip install kopylot
