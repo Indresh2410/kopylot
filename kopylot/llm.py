@@ -5,6 +5,7 @@ import openai
 import rich
 
 openai.api_key = os.getenv("KOPYLOT_AUTH_TOKEN", "")
+engine = os.getenv("KOPYLOT_ENGINE", "gpt-3.5-turbo-instruct")
 
 
 def validate_token() -> None:
@@ -19,7 +20,7 @@ def validate_token() -> None:
 def ask_llm(prompt: str, temperature: float = 0.7, max_tokens: int = 2048) -> str:
     validate_token()
     response = openai.Completion.create(
-        engine="gpt-3.5-turbo-instruct",
+        engine=engine,
         prompt=prompt,
         temperature=temperature,
         max_tokens=max_tokens,
